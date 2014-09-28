@@ -11,8 +11,9 @@ import UIKit
 class UsageTableViewCell: UITableViewCell {
     
     let nameLabel: UILabel = UILabel()
+    let detailLabel: UILabel = UILabel()
     let iconView: UIImageView = UIImageView()
-    let progressBar: UIProgressView = UIProgressView()
+    let progressBar: TYMProgressBarView = TYMProgressBarView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,15 +23,24 @@ class UsageTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         var frame = self.frame
         //name label
-        nameLabel.frame = CGRectMake(60.0, 0.0, frame.size.width - 60.0, 15.0)
+        nameLabel.frame = CGRectMake(60.0, 0.0, frame.size.width - 120.0, 20.0)
         nameLabel.text = "Override Me"
         self.addSubview(nameLabel)
+        detailLabel.frame = CGRectMake(frame.size.width - 120, 0.0, 105, 20.0)
+        detailLabel.text = "25/50"
+        detailLabel.autoresizingMask = UIViewAutoresizing.FlexibleLeftMargin
+        detailLabel.textColor = UIColor.darkGrayColor()
+        detailLabel.textAlignment = NSTextAlignment.Right
+        detailLabel.font = UIFont.italicSystemFontOfSize(13.0)
+        self.addSubview(detailLabel)
         // icon view
         iconView.frame = CGRectMake(5, 5, frame.size.height - 10, frame.size.height - 10)
         self.addSubview(iconView)
         // progress bar
-        progressBar.frame = CGRectMake(60.0, 15.0, frame.size.width - 60.0, frame.size.height - 15.0)
+        progressBar.frame = CGRectMake(60.0, 20.0, frame.size.width - 75.0, frame.size.height - 25.0)
+        progressBar.barBorderWidth = 1.0
         progressBar.progress = 0.25
+        progressBar.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         self.addSubview(progressBar)
     }
  

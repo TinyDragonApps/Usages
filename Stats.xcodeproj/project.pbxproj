@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		338F45A68FBE4A38BEF8BDD1 /* libPods-Stats.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 490002CA1DC74009BE28EFA4 /* libPods-Stats.a */; };
 		D87F284D19D86D5C00D49122 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F284C19D86D5C00D49122 /* AppDelegate.swift */; };
 		D87F284F19D86D5C00D49122 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F284E19D86D5C00D49122 /* MasterViewController.swift */; };
 		D87F285119D86D5C00D49122 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F285019D86D5C00D49122 /* DetailViewController.swift */; };
@@ -30,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		490002CA1DC74009BE28EFA4 /* libPods-Stats.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Stats.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3B248C94A634A048B5C271F /* Pods-Stats.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stats.xcconfig"; path = "Pods/Pods-Stats.xcconfig"; sourceTree = "<group>"; };
 		D87F284719D86D5B00D49122 /* Stats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87F284B19D86D5C00D49122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D87F284C19D86D5C00D49122 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		D87F287019D8734700D49122 /* PercentUsage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentUsage.swift; sourceTree = "<group>"; };
 		D87F287319D8742000D49122 /* DummyPercentUsage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyPercentUsage.swift; sourceTree = "<group>"; };
 		D87F287519D876B500D49122 /* UsageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsageTableViewCell.swift; sourceTree = "<group>"; };
+		D87F287719D8C46E00D49122 /* Stat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stat-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				338F45A68FBE4A38BEF8BDD1 /* libPods-Stats.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,9 +72,12 @@
 		D87F283E19D86D5B00D49122 = {
 			isa = PBXGroup;
 			children = (
+				D87F287719D8C46E00D49122 /* Stat-Bridging-Header.h */,
 				D87F284919D86D5B00D49122 /* Stats */,
 				D87F286119D86D5C00D49122 /* StatsTests */,
 				D87F284819D86D5B00D49122 /* Products */,
+				B3B248C94A634A048B5C271F /* Pods-Stats.xcconfig */,
+				E9774B4D85754F309B7A114E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +156,14 @@
 			path = Dummy;
 			sourceTree = "<group>";
 		};
+		E9774B4D85754F309B7A114E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				490002CA1DC74009BE28EFA4 /* libPods-Stats.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D87F286819D86D5C00D49122 /* Build configuration list for PBXNativeTarget "Stats" */;
 			buildPhases = (
+				C98D59EACC6D41E0A4185095 /* Check Pods Manifest.lock */,
 				D87F284319D86D5B00D49122 /* Sources */,
 				D87F284419D86D5B00D49122 /* Frameworks */,
 				D87F284519D86D5B00D49122 /* Resources */,
+				D417D019DBCB41E99C55CB5C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,6 +260,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C98D59EACC6D41E0A4185095 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D417D019DBCB41E99C55CB5C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Stats-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D87F284319D86D5B00D49122 /* Sources */ = {
@@ -376,21 +427,25 @@
 		};
 		D87F286919D86D5C00D49122 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3B248C94A634A048B5C271F /* Pods-Stats.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Stats/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Stat-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		D87F286A19D86D5C00D49122 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3B248C94A634A048B5C271F /* Pods-Stats.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Stats/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Stat-Bridging-Header.h";
 			};
 			name = Release;
 		};
