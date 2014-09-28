@@ -14,6 +14,9 @@
 		D87F285619D86D5C00D49122 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D87F285519D86D5C00D49122 /* Images.xcassets */; };
 		D87F285919D86D5C00D49122 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87F285719D86D5C00D49122 /* LaunchScreen.xib */; };
 		D87F286519D86D5C00D49122 /* StatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F286419D86D5C00D49122 /* StatsTests.swift */; };
+		D87F287119D8734700D49122 /* PercentUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F287019D8734700D49122 /* PercentUsage.swift */; };
+		D87F287419D8742000D49122 /* DummyPercentUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F287319D8742000D49122 /* DummyPercentUsage.swift */; };
+		D87F287619D876B500D49122 /* UsageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F287519D876B500D49122 /* UsageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		D87F285E19D86D5C00D49122 /* StatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87F286319D86D5C00D49122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D87F286419D86D5C00D49122 /* StatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTests.swift; sourceTree = "<group>"; };
+		D87F287019D8734700D49122 /* PercentUsage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentUsage.swift; sourceTree = "<group>"; };
+		D87F287319D8742000D49122 /* DummyPercentUsage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyPercentUsage.swift; sourceTree = "<group>"; };
+		D87F287519D876B500D49122 /* UsageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsageTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,8 @@
 		D87F284919D86D5B00D49122 /* Stats */ = {
 			isa = PBXGroup;
 			children = (
+				D87F286F19D8713E00D49122 /* TableViewCells */,
+				D87F286E19D870D000D49122 /* Models */,
 				D87F284C19D86D5C00D49122 /* AppDelegate.swift */,
 				D87F284E19D86D5C00D49122 /* MasterViewController.swift */,
 				D87F285019D86D5C00D49122 /* DetailViewController.swift */,
@@ -95,7 +103,7 @@
 			children = (
 				D87F284B19D86D5C00D49122 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		D87F286119D86D5C00D49122 /* StatsTests */ = {
@@ -112,7 +120,32 @@
 			children = (
 				D87F286319D86D5C00D49122 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D87F286E19D870D000D49122 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D87F287219D873E100D49122 /* Dummy */,
+				D87F287019D8734700D49122 /* PercentUsage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D87F286F19D8713E00D49122 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				D87F287519D876B500D49122 /* UsageTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		D87F287219D873E100D49122 /* Dummy */ = {
+			isa = PBXGroup;
+			children = (
+				D87F287319D8742000D49122 /* DummyPercentUsage.swift */,
+			);
+			path = Dummy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,8 +249,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D87F285119D86D5C00D49122 /* DetailViewController.swift in Sources */,
+				D87F287419D8742000D49122 /* DummyPercentUsage.swift in Sources */,
 				D87F284F19D86D5C00D49122 /* MasterViewController.swift in Sources */,
 				D87F284D19D86D5C00D49122 /* AppDelegate.swift in Sources */,
+				D87F287119D8734700D49122 /* PercentUsage.swift in Sources */,
+				D87F287619D876B500D49122 /* UsageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +378,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Stats/Info.plist;
+				INFOPLIST_FILE = "Stats/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -352,7 +388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Stats/Info.plist;
+				INFOPLIST_FILE = "Stats/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -370,7 +406,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = StatsTests/Info.plist;
+				INFOPLIST_FILE = "StatsTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stats.app/Stats";
@@ -385,7 +421,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = StatsTests/Info.plist;
+				INFOPLIST_FILE = "StatsTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stats.app/Stats";
@@ -411,6 +447,7 @@
 				D87F286A19D86D5C00D49122 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D87F286B19D86D5C00D49122 /* Build configuration list for PBXNativeTarget "StatsTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +456,7 @@
 				D87F286D19D86D5C00D49122 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
