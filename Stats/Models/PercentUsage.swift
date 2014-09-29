@@ -10,7 +10,16 @@ import UIKit
 
 class PercentUsage: NSObject {
     var name: String = ""
-    var totalString: String = ""
-    var usedString: String = ""
-    var usedPercentage: Float = 0.0
+    var usedPercentage: CGFloat = 0.0
+    
+    func detailString() -> String{
+        fatalError("Must override this in a subclass")
+        return ""
+    }
+    
+    func populateCell(cell: UsageTableViewCell) {
+        cell.nameLabel.text = name;
+        cell.progressBar.progress = usedPercentage/100
+        cell.detailLabel.text = detailString()
+    }
 }

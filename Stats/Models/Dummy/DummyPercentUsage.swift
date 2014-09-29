@@ -12,8 +12,10 @@ class DummyPercentUsage: PercentUsage {
     override init(){
         super.init()
         self.name = "/"
-        self.totalString = "2TB"
-        self.usedString = "250GB"
         self.usedPercentage = 12.5
+    }
+    
+    override func detailString() -> String {
+        return "25GB/500GB"
     }
 }
